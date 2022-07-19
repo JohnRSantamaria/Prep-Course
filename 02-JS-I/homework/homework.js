@@ -163,7 +163,7 @@ function redondearHaciaArriba(num) {
 function numeroRandom(min=0,max=1) {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  return Math.random()*(max-min)+min;
+  return (Math.random()*(max-min)+min);
 }
 
 function esPositivo(numero) {
