@@ -205,7 +205,15 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  array.sort();
+    if(array.includes("Enero","Marzo","Noviembre")){
+      var result = array.filter(function(month){
+        if(month=="Marzo"||month=="Enero"||month=="Noviembre"){return true;}        
+      });
+      }else{
+      return("No se encontraron los meses pedidos");
+      
+      }
+      return(result);
 }
 
 
@@ -226,9 +234,23 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  numero.map();
+  newArray=[];
+  flag=true;
+  for( i=0 ; i<10;i++){
+    numero+=2;
+    newArray[i]=numero;
+    if(i==numero){
+      flag=false;
+      break;
+    }
+  }
 
-  
+  if(flag){
+    return(newArray)
+  }else{
+    return("Se interrumpió la ejecución");
+  }
+
 
 }
 
@@ -240,6 +262,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  newArray=[];
+  for( i=0 ; i<9;i++){
+    numero+=2;
+    newArray[i]=numero;
+    if(i==4){
+      continue;
+    }
+  }
+  return(newArray);
+
+
 }
 
 
