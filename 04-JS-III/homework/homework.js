@@ -28,10 +28,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  for(i=0; i<array.length;i++){
-    array[i]=array[i]+=1;
+result=[];
+  for (value of array) {
+    result.push(value+=1); 
   }
-  return(array);
+  return(result);
 }
 
 
@@ -82,8 +83,8 @@ function agregarNumeros(numeros) { //9
   // Suma todos los enteros y devuelve el valor
   // Tu código:
   sum=0;
-  for(i=0; i<numeros.length; i++){
-    sum+=numeros[i];
+  for(let num of numeros){
+    sum+=num;
   }
   return(sum);
 }
@@ -94,31 +95,51 @@ function promedioResultadosTest(resultadosTest) { //10
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
   sum=0;
-  for(i=0;i<resultadosTest.length;i++){
-    sum+=resultadosTest[i];
+  for(let num of resultadosTest){
+    sum+=num;
   }
   sum/=resultadosTest.length;
   return(sum);
 }
 
 
-function numeroMasGrande(numeros) {
+function numeroMasGrande(numeros) { //11
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  numeros.sort((a,b) => a-b);
+  return(numeros[numeros.length-1]);
 }
 
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  var multiplicacion =1;
+
+  if(arguments.length === 0){
+    return 0;
+  }
+  for (const i of arguments) {
+    multiplicacion*=i;
+  }
+  return(multiplicacion);
+
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+sum=0;
+  
+for (const num of arreglo) {
+  if(num>18){
+    sum+=1;
+  };
+}
+return(sum);
 
 }
 
@@ -129,6 +150,26 @@ function diaDeLaSemana(numeroDeDia) {
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
   
+  switch (numeroDeDia) {
+    case 1: return "Es fin de semana"
+    
+    case 2: return "Es dia Laboral"
+    
+    case 3: return "Es dia Laboral"
+     
+    case 4: return "Es dia Laboral"
+    
+    case 5: return "Es dia Laboral"
+   
+    case 6: return "Es dia Laboral"
+    
+    case 7: return "Es fin de semana"
+    default:
+    break;
+  }
+
+
+  
 } 
 
 
@@ -136,6 +177,13 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  array=n.toString();
+  
+  if(array[0]==='9'){
+    return(true);
+  }{
+    return(false);
+  }
   
 }
 
@@ -144,7 +192,11 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  
+  if(arreglo===arreglo){
+    return(true);
+  }else{
+    return(fasle);
+  }
 } 
 
 
