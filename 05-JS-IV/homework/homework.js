@@ -21,8 +21,8 @@ function agregarPropiedad (objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-
-    
+    objeto[property] = null;
+    return objeto;
 }
 
 function invocarMetodo (objeto, metodo) {
@@ -30,7 +30,8 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-
+   
+  
 }
 
 function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) { //Done
@@ -77,8 +78,8 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(objeto["propiedad"]==propiedad){
-     return true;
+  if(objeto [propiedad] == "porpiedad"){
+    return true;
   }else{
     return false;
   }
@@ -130,8 +131,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
 
-
-
+  for (const usuario in usuarios) {
+      usuarios[usuario].esPremium = true;
+  }
+  return (usuarios);
 }
 function sumarLikesDeUsuario (usuario) {
   // "usuario" tiene una propiedad llamada "posts" que es un array
@@ -140,8 +143,11 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  usuario [posts][post][likes] =+1;
-  return(usuario);
+ var count = 0;
+  for (const key in usuario.posts) {
+    count+=usuario.posts[key].likes
+  }
+return count
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -154,6 +160,16 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
+  producto = {
+
+    calcularPrecioDescuento(){
+      this.producto.precio*
+    }
+  }
+  
+
+
+
 
 }
 
