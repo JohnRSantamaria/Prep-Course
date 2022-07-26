@@ -8,6 +8,14 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
+  class Usuario{
+    opciones={
+      usuario: Usuario||"hola",
+      nombre : nombre ||"john",
+      email  : email  ||"email",
+      password : password ||"password",      
+    }
+  }
 }
 
 function agregarMetodoPrototype(Constructor) {

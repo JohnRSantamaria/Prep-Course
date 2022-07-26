@@ -30,7 +30,8 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-   
+
+  objeto[metodo]();  
   
 }
 
@@ -78,7 +79,7 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(objeto [propiedad] == "porpiedad"){
+  if(objeto[propiedad]){
     return true;
   }else{
     return false;
@@ -160,18 +161,18 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto = {
+  var descuento=0;
+  var nuevoprecio =0;
 
-    calcularPrecioDescuento(){
-      this.producto.precio*
+    producto.calcularPrecioDescuento = function(){
+      descuento = producto.precio*producto.porcentajeDeDescuento      
+      nuevoprecio=producto.precio-descuento
+      return nuevoprecio
     }
+    return producto;
+
   }
-  
-
-
-
-
-}
+   
 
 // No modificar nada debajo de esta línea
 // --------------------------------
